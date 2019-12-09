@@ -24,7 +24,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active">
-          <a href="#">
+          <a href="../dashboard">
             <i class="fa fa-home"></i> <span>Dashboard</span>
           </a>
         </li>
