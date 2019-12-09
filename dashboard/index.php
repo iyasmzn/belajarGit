@@ -35,8 +35,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard User Data
-        <small>Manajement data User</small>
+        Belajar Git
+        <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li class="active"><i class="fa fa-home">Dashboard</i></li>
@@ -75,11 +75,11 @@
   </div>
   <!-- /.content-wrapper -->
 <!-- footer -->
-	<?php include '../layout/footer.php'; ?> 
+	<?php include '../footer.php'; ?> 
 <!-- /footer -->
 
   <!-- Control Sidebar -->
- 	<?php include '../layout/controlSidebar.php'; ?>
+ 	<?php include '../controlSidebar.php'; ?>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -89,7 +89,7 @@
 
 <!-- jQuery 3 -->
 	<?php 
-		include '../layout/jQuery3.php'; 
+		include '../jQuery3.php'; 
 	?>	
 <!-- /jQuery 3 -->
 </body>

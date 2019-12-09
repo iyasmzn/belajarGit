@@ -42,7 +42,7 @@
         </li>
         <li class="header">SETTING</li>
         <li>
-          <a href="user.php">
+          <a href="../user">
             <i class="fa fa-user"></i> <span>User</span>
           </a>
         </li>
