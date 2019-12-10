@@ -2,7 +2,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="template/AdminLTE2/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="../AdminLTE2/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -23,12 +23,12 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active">
-          <a href="../dashboard">
+        <li id="dashboard">
+          <a id="dashA" href="../dashboard">
             <i class="fa fa-home"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview">
+        <li id="post" class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Post</span>
             <span class="pull-right-container">
@@ -36,12 +36,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="template/AdminLTE2/index.html"><i class="fa fa-plus"></i> Add Post</a></li>
-            <li><a href="template/AdminLTE2/index2.html"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
+            <li id="postAdd"><a href="#"><i class="fa fa-plus"></i> Add Post</a></li>
+            <li id="postDash"><a id="postDashA" href="../post/postDash.php"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
           </ul>
         </li>
         <li class="header">SETTING</li>
-        <li>
+        <li id="user">
           <a href="../user">
             <i class="fa fa-user"></i> <span>User</span>
           </a>

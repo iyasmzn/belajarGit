@@ -35,7 +35,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Belajar Git
+        Git Learning
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
@@ -92,5 +92,10 @@
 		include '../layout/jQuery3.php'; 
 	?>	
 <!-- /jQuery 3 -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#dashboard').addClass('active');
+  });
+</script>
 </body>
 </html>

@@ -35,8 +35,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard User Data
-        <small>Manajement data User</small>
+        Dashboard Post Data
+        <small>Manajement data Post</small>
       </h1>
       <ol class="breadcrumb">
         <li class="active"><i class="fa fa-home">Dashboard</i></li>
@@ -139,7 +139,8 @@
 <!-- /jQuery 3 -->
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#user').addClass('active');
+    $('#postDash').addClass('active');
+    $('#post').addClass('active');
   });
 </script>
 </body>
