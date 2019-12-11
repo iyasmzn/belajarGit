@@ -24,7 +24,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li id="dashboard">
-          <a id="dashA" href="../dashboard">
+          <a id="dashA" href="http://localhost/git/github/belajarGit/dashboard">
             <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>
@@ -36,15 +36,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li id="postDash"><a id="postDashA" href="http://localhost/git/github/belajarGit/post/postDash.php"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
             <li id="postAdd"><a href="#"><i class="fa fa-plus"></i> Add Post</a></li>
-            <li id="postDash"><a id="postDashA" href="../post/postDash.php"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
           </ul>
         </li>
         <li class="header">SETTING</li>
-        <li id="user">
-          <a href="../user">
-            <i class="fa fa-user"></i> <span>User</span>
+        <li id="user" class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li id="userDash"><a id="postDashA" href="http://localhost/git/github/belajarGit/user"><i class="fa fa-user"></i> Dashboard User</a></li>
+            <li id="userAdd"><a href="http://localhost/git/github/belajarGit/user/create.php"><i class="fa fa-user-plus"></i> Add User</a></li>
+          </ul>
         </li>
       </ul>
     </section>

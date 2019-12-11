@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BelajarGit | User</title>
+  <title>BelajarGit | User Add</title>
   <?php include '../layout/link.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -36,12 +36,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard User Data
-        <small>Manajement data User</small>
+        User Add Data
+        <small>Create data User</small>
       </h1>
       <ol class="breadcrumb">
         <li><i class="fa fa-home">Dashboard</i></li>
-        <li class="active"><i class="fa fa-user">User</i></li>
+        <li><a href="http://localhost/git/github/belajarGit/user/index.php"><i class="fa fa-user">User</i></a></li>
+        <li class="active"><i class="fa fa-plus">User Add</i></li>
       </ol>
     </section>
 
@@ -51,48 +52,32 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <a href="create.php" class="btn btn-l btn-primary"><i class="fa fa-plus"></i>Tambah</a>
+              <h3><i class="fa fa-user"></i>User Login</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th style="width: 10px">No</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th style="width: 150px">Action</th>
-                </tr>
-                <?php 
-                  include '../connection/connect.php';
-                  $no   = 1;
-                  $data = "SELECT * FROM users";
-                  $res  = mysqli_query($connect, $data);
-                  if (mysqli_num_rows($res)) {
-                     while ($row = mysqli_fetch_assoc($res)) { ?>
-                      <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $row['name']; ?></td>
-                        <td><?= $row['email']; ?></td>
-                        <td>
-                          <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>">Edit</a>
-                          <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')">Delete</a>
-                        </td>
-                      </tr>
-                      <?php
-                     }
-                   } 
-                ?>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-              </table>
+              <form role="form" action="proccessAdd.php" method="POST">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control"  name="email" id="email" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                  </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                  <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i>Back</a>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
             </div>
             <!-- /.box-body -->
           </div>
@@ -123,7 +108,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#user').addClass('active');
-    $('#userDash').addClass('active');
+    $('#userAdd').addClass('active');
   });
 </script>
 </body>

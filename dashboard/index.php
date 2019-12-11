@@ -40,8 +40,6 @@
       </h1>
       <ol class="breadcrumb">
         <li class="active"><i class="fa fa-home">Home</i></li>
-        <li><i class="fa fa-book">Post</i></li>
-        <li><i class="fa fa-user">User</i></li>
       </ol>
     </section>
 
