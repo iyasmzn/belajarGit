@@ -25,7 +25,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li id="dashboard">
           <a id="dashA" href="../dashboard">
-            <i class="fa fa-home"></i> <span>Dashboard</span>
+            <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>
         <li id="post" class="treeview">
