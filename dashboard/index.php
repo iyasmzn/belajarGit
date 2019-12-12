@@ -39,7 +39,7 @@
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
-        <li class="active"><i class="fa fa-home">Home</i></li>
+        <li class="active"><i class="fa fa-home"></i> Home</li>
       </ol>
     </section>
 

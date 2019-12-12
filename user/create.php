@@ -36,13 +36,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Add Data
+        <i class="fa fa-user-plus"></i> User Add Data
         <small>Create data User</small>
       </h1>
       <ol class="breadcrumb">
-        <li><i class="fa fa-home">Dashboard</i></li>
-        <li><a href="http://localhost/git/github/belajarGit/user/index.php"><i class="fa fa-user">User</i></a></li>
-        <li class="active"><i class="fa fa-plus">User Add</i></li>
+        <li><i class="fa fa-home"></i> Dashboard</li>
+        <li><a href="http://localhost/git/github/belajarGit/user/index.php"><i class="fa fa-user"></i> User</a></li>
+        <li class="active"><i class="fa fa-user-plus"></i> User Add</li>
       </ol>
     </section>
 

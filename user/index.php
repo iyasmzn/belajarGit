@@ -36,12 +36,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard User Data
+        <i class="fa fa-users"></i> Dashboard User Data
         <small>Manajement data User</small>
       </h1>
       <ol class="breadcrumb">
-        <li><i class="fa fa-home">Dashboard</i></li>
-        <li class="active"><i class="fa fa-user">User</i></li>
+        <li><i class="fa fa-home"></i> Dashboard</li>
+        <li class="active"><i class="fa fa-user"></i> User</li>
       </ol>
     </section>
 
@@ -51,7 +51,7 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <a href="create.php" class="btn btn-l btn-primary"><i class="fa fa-plus"></i>Tambah</a>
+              <a href="create.php" class="btn btn-l btn-primary"><i class="fa fa-user-plus"></i> Add</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -74,8 +74,8 @@
                         <td><?= $row['name']; ?></td>
                         <td><?= $row['email']; ?></td>
                         <td>
-                          <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>">Edit</a>
-                          <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')">Delete</a>
+                          <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>"><i class="fa fa-gear"></i> Edit</a>
+                          <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a>
                         </td>
                       </tr>
                       <?php

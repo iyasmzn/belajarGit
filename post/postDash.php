@@ -39,9 +39,8 @@
         <small>Manajement data Post</small>
       </h1>
       <ol class="breadcrumb">
-        <li><i class="fa fa-home">Dashboard</i></li>
-        <li><i class="fa fa-book">Post</i></li>
-        <li class="active"><i class="fa fa-user">Dashboard</i></li>
+        <li><i class="fa fa-home"></i> Dashboard</li>
+        <li class="active"><i class="fa fa-book"></i> Post</li>
       </ol>
     </section>
 
