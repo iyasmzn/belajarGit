@@ -53,12 +53,7 @@
             <div class="box-header with-border">
               <a href="create.php" class="btn btn-l btn-primary"><i class="fa fa-user-plus"></i> Add</a>
             </div>
-              <div class="callout callout-warning" id="alert" style="display: none;">
-                <h4><i class="fa fa-warning"></i> Confirmation!</h4>
-
-                <p>Do you really want to <b>DELETE</b> this ?</p>
-                <a style="text-decoration: none;" href="delete.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-l"><i class="fa fa-check"></i>YES</a>
-              </div>
+              
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">
@@ -81,13 +76,21 @@
                         <td><?= $row['email']; ?></td>
                         <td>
                           <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>"><i class="fa fa-gear"></i> Edit</a>
-                          <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a>
-                          <!-- <a class="btn btn-danger btn-xs" onclick="alertClick()"><i class="fa fa-user-times"></i> Delete</a> -->
+                          <!-- <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a> -->
+                          <a class="btn btn-danger btn-xs" onclick="alertClick()"><i class="fa fa-user-times"></i> Delete</a>
                         </td>
+                        <div class="callout callout-warning" id="alert" style="display: none;">
+                          <h4><i class="fa fa-warning"></i> Confirmation!</h4>
+
+                          <p>Do you really want to <b>DELETE</b> this ?</p>
+                          <a style="text-decoration: none;" href="delete.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-l"><i class="fa fa-check"></i> YES</a>
+                          <a style="text-decoration:none;" class="btn btn-primary btn-l" onclick="alertCancel()"><i class="fa fa-times"></i> CANCEL</a>
+                        </div>
                       </tr>
                       <?php
                      }
                    } 
+                   
                 ?>
               </table>
 
@@ -127,6 +130,10 @@
   function alertClick() {
     var al = document.getElementById('alert');
     al.style.display = "block";
+  }
+  function alertCancel() {
+    var al = document.getElementById('alert');
+    al.style.display = "none";
   }
 </script>
 </body>
