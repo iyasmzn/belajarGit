@@ -74,7 +74,7 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer">
-                  <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i>Back</a>
+                  <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i> Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

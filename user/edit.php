@@ -75,13 +75,13 @@
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?= $row['password'] ?>">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                   </div>
                 </div>
                 <!-- /.box-body -->
                 <input type="hidden" name="id" value="<?= $ID ?>">
                 <div class="box-footer">
-                  <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i>Back</a>
+                  <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i> Back</a>
                   <button type="submit" class="btn btn-primary"><i class="fa fa-gear"></i> Submit</button>
                 </div>
               </form>
