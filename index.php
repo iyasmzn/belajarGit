@@ -1,6 +1,3 @@
-<?php
-  // header('location:dashboard');
-?>
 <!DOCTYPE html>
 <html>
 <head>
