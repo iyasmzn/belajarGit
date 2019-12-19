@@ -36,8 +36,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li id="postDash"><a id="postDashA" href="http://localhost/git/github/belajarGit/post/postDash.php"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
-            <li id="postAdd"><a href="#"><i class="fa fa-plus"></i> Add Post</a></li>
+            <li id="postDash"><a id="postDashA" href="http://localhost/git/github/belajarGit/post/index.php"><i class="fa fa-navicon"></i> Dashboard Post</a></li>
+            <li id="postAdd"><a href="http://localhost/git/github/belajarGit/post/add.php"><i class="fa fa-plus"></i> Add Post</a></li>
           </ul>
         </li>
         <li class="header">SETTING</li>
@@ -49,7 +49,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li id="userDash"><a id="postDashA" href="http://localhost/git/github/belajarGit/user"><i class="fa fa-user"></i> Dashboard User</a></li>
+            <li id="userDash"><a id="userDashA" href="http://localhost/git/github/belajarGit/user"><i class="fa fa-user"></i> Dashboard User</a></li>
             <li id="userAdd"><a href="http://localhost/git/github/belajarGit/user/create.php"><i class="fa fa-user-plus"></i> Add User</a></li>
           </ul>
         </li>

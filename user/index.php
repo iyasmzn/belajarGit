@@ -76,8 +76,8 @@
                         <td><?= $row['email']; ?></td>
                         <td>
                           <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>"><i class="fa fa-gear"></i> Edit</a>
-                          <!-- <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a> -->
-                          <a class="btn btn-danger btn-xs" onclick="alertClick()"><i class="fa fa-user-times"></i> Delete</a>
+                          <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a>
+                          <!-- <a class="btn btn-danger btn-xs" onclick="alertClick()"><i class="fa fa-user-times"></i> Delete</a> -->
                         </td>
                         <div class="callout callout-warning" id="alert" style="display: none;">
                           <h4><i class="fa fa-warning"></i> Confirmation!</h4>

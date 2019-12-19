@@ -50,69 +50,47 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Bordered Table</h3>
+              <a href="add.php" class="btn btn-l btn-primary"><i class="fa fa-plus-circle"></i> Add</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th style="width: 10px;">No</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Status</th>
+                    <th style="width: 150px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    include '../connection/connect.php';
+                    $no   = 1;
+                    $sql  = "SELECT * FROM post";
+                    $res  = mysqli_query($connect, $sql);
+                    if (mysqli_num_rows($res)) {
+                      while ($row = mysqli_fetch_assoc($res)) { ?>
+                        <tr>
+                          <td><?= $no++ ?></td>
+                          <td><?= $row['author'] ?></td>
+                          <td><?= $row['title'] ?></td>
+                          <td><?= $row['content'] ?></td>
+                          <td><?= ($row['status'])?"Publish":"Draft" ?></td>
+                          <td>
+                            <a class="btn btn-warning btn-xs" href="edit.php?id=<?= $row['id']; ?>"><i class="fa fa-gear"></i> Edit</a>
+                            <a class="btn btn-danger btn-xs" href="delete.php?id=<?= $row['id']; ?>" onclick="javascript:return confirm('Are you sure want to DELETE this?')"><i class="fa fa-user-times"></i> Delete</a>
+                          </td>
+                        </tr>
+                      <?php }
+                    }
+                  ?>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
-            </div>
           </div>
       <!-- /.box -->
 
@@ -143,6 +121,14 @@
     $('#postDash').addClass('active');
     $('#post').addClass('active');
   });
+  function alertClick() {
+    var al = document.getElementById('alert');
+    al.style.display = "block";
+  }
+  function alertCancel() {
+    var al = document.getElementById('alert');
+    al.style.display = "none";
+  }
 </script>
 </body>
 </html>

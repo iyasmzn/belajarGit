@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BelajarGit | User Edit</title>
   <?php include '../layout/link.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -10,7 +9,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="http://localhost/git/github/belajarGit/AdminLTE2/index2.html" class="logo">
+    <a href="../AdminLTE2/index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -36,13 +35,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-gear"></i> User Edit Data
-        <small>Edit data User</small>
+        Add Post Data
+        <small>Adding Data Post</small>
       </h1>
       <ol class="breadcrumb">
         <li><i class="fa fa-home"></i> Dashboard</li>
-        <li><a href="http://localhost/git/github/belajarGit/user/index.php"><i class="fa fa-user"></i> User</a></li>
-        <li class="active"><i class="fa fa-gear"></i> User Edit</li>
+        <li><i class="fa fa-book"></i> Post</li>
+        <li class="active"><i class="fa fa-gear"></i> Edit</li>
       </ol>
     </section>
 
@@ -52,46 +51,43 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <h3><i class="fa fa-user"></i>Edit User Login</h3>
+              <h3 class="box-title">Add Post</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form" action="proccessEdit.php" method="POST">
-                <?php 
-                  include '../connection/connect.php';
-                  $ID       = $_GET['id'];
-                  $userData = "SELECT * FROM users WHERE id = '$ID'";
-                  $query    = mysqli_query($connect, $userData);
-                  $row      = mysqli_fetch_assoc($query);
-                ?>
+            	<form role="form" action="proccess-edit.php" method="POST">
+            		<?php 
+            			include '../connection/connect.php';
+            			$ID 		= $_GET['id'];
+            			$data 	=	"SELECT * FROM post WHERE id='$ID'";
+            			$res		=	mysqli_query($connect, $data);
+            			$row		=	mysqli_fetch_assoc($res);
+            		?>
+            		<input type="hidden" name="id" value="<?= $ID ?>">
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="name">Name</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" value="<?= $row['name'] ?>">
-                    </div>
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" name="author" id="author" placeholder="Enter author name" value="<?= $row['author'] ?>">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email address</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="email" class="form-control"  name="email" id="email" placeholder="Enter email" value="<?= $row['email'] ?>">
-                    </div>
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control"  name="title" id="title" placeholder="Enter title" value="<?= $row['title'] ?>">
                   </div>
                   <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                    </div>
+                    <label for="content">Content</label>
+                    <textarea class="form-control" name="content" id="content" placeholder="Content"><?= $row['content'] ?></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status</label><br>
+                    <input type="radio" name="status" id="status1" value="1" <?= ($row['status'])?"checked":"" ?>><label for="status1">Publish</label>
+                    <input type="radio" name="status" id="status2" value="0" <?= ($row['status'])?"":"checked" ?>><label for="status2">Draft</label>
                   </div>
                 </div>
                 <!-- /.box-body -->
-                <input type="hidden" name="id" value="<?= $ID ?>">
+
                 <div class="box-footer">
                   <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i> Back</a>
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-gear"></i> Submit</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
@@ -123,9 +119,17 @@
 <!-- /jQuery 3 -->
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#user').addClass('active');
-    $('#userDash').addClass('active');
+    $('#postAdd').addClass('active');
+    $('#post').addClass('active');
   });
+  function alertClick() {
+    var al = document.getElementById('alert');
+    al.style.display = "block";
+  }
+  function alertCancel() {
+    var al = document.getElementById('alert');
+    al.style.display = "none";
+  }
 </script>
 </body>
 </html>

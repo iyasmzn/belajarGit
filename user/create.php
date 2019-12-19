@@ -60,22 +60,32 @@
                 <div class="box-body">
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control"  name="email" id="email" placeholder="Enter email">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                      <input type="email" class="form-control"  name="email" id="email" placeholder="Enter email">
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
                   </div>
                 </div>
+
                 <!-- /.box-body -->
 
                 <div class="box-footer">
                   <a href="index.php" class="btn btn-l btn-warning"><i class="fa fa-arrow-left"></i> Back</a>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Submit</button>
                 </div>
               </form>
             </div>
