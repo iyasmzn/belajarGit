@@ -1,7 +1,7 @@
 <?php
 
 
-include '../connection/connect.php';
+include '../config/connect.php';
 
 $ID = $_GET['id'];
 

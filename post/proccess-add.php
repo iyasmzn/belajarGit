@@ -1,5 +1,5 @@
 <?php 
-include '../connection/connect.php';
+include '../config/connect.php';
 $author		= $_POST['author'];
 $title		= $_POST['title'];
 $content	= $_POST['content'];

@@ -24,7 +24,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li id="dashboard">
-          <a id="dashA" href="http://localhost/git/github/belajarGit/">
+          <a id="dashA" href="http://localhost/git/github/belajarGit/home/">
             <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>

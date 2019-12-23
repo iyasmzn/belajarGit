@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <?php 
+    session_start();
+    if (isset($_SESSION['email'])) {
+    include '../layout/link.php'; 
+  ?>
   <title>BelajarGit | User</title>
-  <?php include '../layout/link.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -64,7 +68,7 @@
                   <th style="width: 150px">Action</th>
                 </tr>
                 <?php 
-                  include '../connection/connect.php';
+                  include '../config/connect.php';
                   $no   = 1;
                   $data = "SELECT * FROM users";
                   $res  = mysqli_query($connect, $data);
@@ -136,5 +140,12 @@
     al.style.display = "none";
   }
 </script>
+<?php
+}
+else {
+  echo "login first";
+  header('refresh:1;URL=../index.php');
+}
+?>
 </body>
 </html>

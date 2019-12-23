@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <?php 
+    session_start();
+    if (isset($_SESSION['email'])) {
+    include '../layout/link.php'; 
+  ?>
   <title>BelajarGit | User Edit</title>
-  <?php include '../layout/link.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -58,7 +62,7 @@
             <div class="box-body">
               <form role="form" action="proccessEdit.php" method="POST">
                 <?php 
-                  include '../connection/connect.php';
+                  include '../config/connect.php';
                   $ID       = $_GET['id'];
                   $userData = "SELECT * FROM users WHERE id = '$ID'";
                   $query    = mysqli_query($connect, $userData);
@@ -127,5 +131,12 @@
     $('#userDash').addClass('active');
   });
 </script>
+<?php 
+}
+else {
+  echo "login dulu bambank";
+  header('refresh:1;URL=../index.php');
+}
+?>
 </body>
 </html>

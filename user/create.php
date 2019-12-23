@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <?php 
+    session_start();
+    if (isset($_SESSION['eamil'])) {
+    include '../layout/link.php'; 
+  ?>
   <title>BelajarGit | User Add</title>
-  <?php include '../layout/link.php'; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -121,5 +125,12 @@
     $('#userAdd').addClass('active');
   });
 </script>
+<?php
+  } 
+  else {
+    echo "log in doelooe";
+    header('refresh:1;URL=../index.php');
+  }
+?>
 </body>
 </html>

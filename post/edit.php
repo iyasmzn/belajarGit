@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include '../layout/link.php'; ?>
+  <?php
+  session_start();
+  if (isset($_SESSION['email'])) {
+    include '../layout/link.php'; 
+  ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -57,7 +61,7 @@
             <div class="box-body">
             	<form role="form" action="proccess-edit.php" method="POST">
             		<?php 
-            			include '../connection/connect.php';
+            			include '../config/connect.php';
             			$ID 		= $_GET['id'];
             			$data 	=	"SELECT * FROM post WHERE id='$ID'";
             			$res		=	mysqli_query($connect, $data);
@@ -67,11 +71,17 @@
                 <div class="box-body">
                   <div class="form-group">
                     <label for="author">Author</label>
-                    <input type="text" class="form-control" name="author" id="author" placeholder="Enter author name" value="<?= $row['author'] ?>">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                      <input type="text" class="form-control" name="author" id="author" placeholder="Enter author name" value="<?= $row['author'] ?>">
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control"  name="title" id="title" placeholder="Enter title" value="<?= $row['title'] ?>">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                      <input type="text" class="form-control"  name="title" id="title" placeholder="Enter title" value="<?= $row['title'] ?>">
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="content">Content</label>
@@ -79,8 +89,8 @@
                   </div>
                   <div class="form-group">
                     <label for="status">Status</label><br>
-                    <input type="radio" name="status" id="status1" value="1" <?= ($row['status'])?"checked":"" ?>><label for="status1">Publish</label>
-                    <input type="radio" name="status" id="status2" value="0" <?= ($row['status'])?"":"checked" ?>><label for="status2">Draft</label>
+                    <input type="radio" class="flat-red" name="status" id="status1" value="1" <?= ($row['status'])?"checked":"" ?>><label for="status1">Publish</label>
+                    <input type="radio" class="flat-red" name="status" id="status2" value="0" <?= ($row['status'])?"":"checked" ?>><label for="status2">Draft</label>
                   </div>
                 </div>
                 <!-- /.box-body -->
@@ -131,5 +141,13 @@
     al.style.display = "none";
   }
 </script>
+<?php
+  } 
+  else {
+    echo "LOG IN DULU ANJAY";
+    header('refresh:2;URL = ../index.php');
+  }
+
+?>
 </body>
 </html>

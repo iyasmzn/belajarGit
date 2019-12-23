@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include '../layout/link.php'; ?>
+  <?php 
+  session_start();
+  if (isset($_SESSION['email'])) {
+  include '../layout/link.php'; 
+  ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -67,7 +71,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    include '../connection/connect.php';
+                    include '../config/connect.php';
                     $no   = 1;
                     $sql  = "SELECT * FROM post";
                     $res  = mysqli_query($connect, $sql);
@@ -130,5 +134,12 @@
     al.style.display = "none";
   }
 </script>
+<?php
+  }
+  else {
+    echo "PLEASE LOG IN FIRST!";
+    header('refresh:2;URL = ../index.php');
+  }
+?>
 </body>
 </html>

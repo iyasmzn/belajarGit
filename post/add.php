@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include '../layout/link.php'; ?>
+  <?php 
+  session_start();
+  if (isset($_SESSION['email'])) {
+  include '../layout/link.php'; 
+  ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -67,7 +71,7 @@
                   <div class="form-group">
                     <label for="title">Title</label>
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                       <input type="text" class="form-control"  name="title" id="title" placeholder="Enter title">
                     </div>
                   </div>
@@ -80,8 +84,14 @@
                   <div class="form-group">
                     <label for="status">Status</label><br>
                     <label>
-                    <input type="radio" name="status" id="status1" value="1"><label for="status1">Publish</label>
-                    <input type="radio" name="status" id="status2" value="0"><label for="status2">Draft</label>
+                    <label>
+                      <input type="radio" name="status" class="flat-red" value="1">
+                      Publish
+                    </label>
+                    <label>
+                      <input type="radio" name="status" class="flat-red" value="0">
+                      Draft
+                    </label>
                   </div>
                 </div>
 
@@ -133,5 +143,12 @@
     al.style.display = "none";
   }
 </script>
+
+<?php 
+  } else {
+    echo "Please Login First";
+    header('refresh:2;URL=../index.php');
+  }
+?>
 </body>
 </html>
